@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/(root)/startup/[id]/page.jsx",
+    "app/(root)/startup/create/page.jsx",
+    "sanity/lib/queries.js",
+    "sanity/lib/write-client.js",
+    "sanity/schemaTypes/author.js",
+    "sanity/schemaTypes/playlist.js",
+    "sanity/schemaTypes/startup.js",
+    "sanity/types.js"
+  ],
+  "exclude": ["node_modules"]
+}
