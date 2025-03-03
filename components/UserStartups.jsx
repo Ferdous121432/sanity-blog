@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { client } from "@/sanity/lib/client";
+import { client } from "./../sanity/lib/client";
 import { STARTUPS_BY_AUTHOR_QUERY } from "./../sanity/lib/queries";
 import StartupCard from "./StartupCard";
 
@@ -18,7 +18,7 @@ const UserStartups = ({ id }) => {
   return (
     <>
       {startups.length > 0 ? (
-        startups.map((startup: StartupTypeCard) => (
+        startups.map((startup) => (
           <StartupCard key={startup._id} post={startup} />
         ))
       ) : (
@@ -28,4 +28,3 @@ const UserStartups = ({ id }) => {
   );
 };
 export default UserStartups;
-
