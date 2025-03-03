@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { auth, signIn, signOut } from "@/auth";
+import { auth, signIn, signOut } from "./../auth";
 
 async function Navbar() {
   const session = await auth();

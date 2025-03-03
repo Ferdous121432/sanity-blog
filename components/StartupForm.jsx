@@ -2,16 +2,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { useRouter } from "next/navigation";
+
 import MDEditor from "@uiw/react-md-editor";
-import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
-import { formSchema } from "@/lib/validation";
 import { z } from "zod";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
-import { createPitch } from "@/lib/actions";
+
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
+import { formSchema } from "./../lib/validation";
+import { createPitch } from "./../lib/actions";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState({});
@@ -139,7 +141,7 @@ const StartupForm = () => {
 
         <MDEditor
           value={pitch}
-          onChange={(value) => setPitch(value as string)}
+          onChange={(value) => setPitch(value)}
           id="pitch"
           preview="edit"
           height={300}

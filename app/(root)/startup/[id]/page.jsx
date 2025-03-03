@@ -1,18 +1,21 @@
 import { client } from "@/sanity/lib/client";
-import {
-  PLAYLIST_BY_SLUG_QUERY,
-  STARTUP_BY_ID_QUERY,
-} from "@/sanity/lib/queries";
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 // import MarkdownIt from "markdown-it";
 
-import { formatDate } from "@/lib/utils";
-import { Skeleton } from "@/components/ui/skeleton";
+import { formatDate } from "./../../../../lib/utils";
+import { Skeleton } from "./../../../../components/ui/skeleton";
 import { Suspense } from "react";
-import View from "@/components/View";
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import View from "./../../../../components/View";
+import StartupCard, {
+  StartupTypeCard,
+} from "./../../../../components/StartupCard";
+import {
+  PLAYLIST_BY_SLUG_QUERY,
+  STARTUP_BY_ID_QUERY,
+} from "../../../../sanity/lib/queries";
 
 export const experimental_ppr = true;
 

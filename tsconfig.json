@@ -31,7 +31,19 @@
     "sanity/schemaTypes/author.js",
     "sanity/schemaTypes/playlist.js",
     "sanity/schemaTypes/startup.js",
-    "sanity/types.js"
+    "sanity/types.js",
+    "app/sanity/types.js",
+    "app/sanity/structure.js",
+    "app/sanity/env.js",
+    "app/sanity/schemaTypes/startup.js",
+    "app/sanity/schemaTypes/playlist.js",
+    "app/sanity/schemaTypes/index.js",
+    "app/sanity/schemaTypes/author.js",
+    "app/sanity/lib/write-client.js",
+    "app/sanity/lib/queries.js",
+    "app/sanity/lib/live.js",
+    "app/sanity/lib/image.js",
+    "app/sanity/lib/client.js"
   ],
   "exclude": ["node_modules"]
 }

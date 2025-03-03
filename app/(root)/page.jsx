@@ -1,14 +1,13 @@
 import React from "react";
-import { auth } from "@/auth";
-import { STARTUPS_QUERY } from "@/sanity/lib/queries";
-import { sanityFetch, SanityLive } from "@/sanity/lib/live";
+import { auth } from "./../../auth"; // Adjust the path to the correct location
 
-import SearchForm from "../../components/SearchForm";
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import { STARTUPS_QUERY } from "./../../sanity/lib/queries";
+import { sanityFetch, SanityLive } from "./../../sanity/lib/live";
 
-export default async function page({
-  searchParams,
-}) {
+import SearchForm from "./../../components/SearchForm";
+import StartupCard from "./../../components/StartupCard";
+
+export default async function page({ searchParams }) {
   const { query } = await searchParams;
   const params = { search: query || null };
 
@@ -56,9 +55,7 @@ export default async function page({
         </p>
         <ul className="mt-7 card_grid">
           {posts.length > 0 ? (
-            posts.map((post: StartupTypeCard) => (
-              <StartupCard key={post?._id} post={post} />
-            ))
+            posts.map((post) => <StartupCard key={post?._id} post={post} />)
           ) : (
             <p className="text-20-semibold">
               No startups found for &quot;{query}&quot;
