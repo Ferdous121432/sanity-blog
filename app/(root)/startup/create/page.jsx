@@ -1,7 +1,7 @@
-import { auth } from "@/auth";
+import { auth } from "./../../../../auth";
 import { redirect } from "next/navigation";
 
-import StartupForm from "@/components/StartupForm";
+import StartupForm from "./../../../../components/StartupForm";
 
 const Page = async () => {
   const session = await auth();
