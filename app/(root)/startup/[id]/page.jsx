@@ -22,12 +22,13 @@ export const experimental_ppr = true;
 const page = async ({ params }) => {
   const { id } = await params;
 
-  const [post, { select: editorPosts }] = await Promise.all([
+  const [post, editorPostsData] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
       slug: "editor-post",
     }),
   ]);
+  const editorPosts = editorPostsData?.select;
 
   if (!post) return notFound();
   //   const md = new MarkdownIt();
@@ -46,6 +47,8 @@ const page = async ({ params }) => {
           src={post.image}
           alt="thumbnail"
           className="w-full h-auto rounded-xl"
+          width={800}
+          height={450}
         />
 
         <div className="space-y-5 mt-10 max-w-4xl mx-auto">
